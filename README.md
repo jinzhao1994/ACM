@@ -1,13 +1,25 @@
-# acm
+# ACM
 
 The solutions of problems on online judge.
 
 Prepare for the contest. Many code style are not good for a project.
 
+# Git
+
+To let git show Chinese charactors in `git status`, do as follow.
+
+``` shell
+git config core.quotepath off
+git config i18n.logoutputencoding utf8
+git config i18n.commitencoding utf8
+```
+
+# Vim (and some other) config
+
 If you would like use vim and my `.vimrc` to configure it, you may do as follow first.
 
 
-# Ubuntu
+## Ubuntu
 
 First, you should install some software. Run these sentences.
 
@@ -17,8 +29,7 @@ sudo apt-get upgrade
 sudo apt-get install g++ vim vim-gnome
 ```
 
-
-# Mac OS X
+## Mac OS X
 
 First, you should install some software.
 
