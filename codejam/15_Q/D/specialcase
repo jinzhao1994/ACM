@@ -1,0 +1,36 @@
+3 2 3	false
+3 2 inf	false
+3 3 3	false
+3 3 inf	false
+4 2 4	true
+.##.
+..##
+4 2 inf	true
+4 3 4	false
+4 3 inf	false
+4 4 4	false
+4 4 inf	false
+5 3 5	true
+##...
+.##..
+..#..
+5 3 inf	false
+....##....
+.....##...
+......#...
+5 4 5	false
+5 4 inf	false
+5 5 5	false
+5 5 inf	false
+6 3 4	true
+##..
+.#..
+.###
+6 3 6	true
+6 3 inf	true
+6 4 6	false
+6 4 inf	false
+6 5 6	false
+6 5 inf	false
+6 6 6	false
+6 6 inf	false
