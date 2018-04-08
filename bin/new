@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+import subprocess
+
+import click
+
+
+@click.command()
+@click.option('--filename', '-f', default='main.cc')
+def main(filename):
+    path = os.getcwd()
+    while not os.path.isfile(os.path.join(path, filename)) and path != '/':
+        path = os.path.dirname(path)
+    src = os.path.join(path, filename)
+    if not os.path.isfile(src):
+        sys.exit(1)
+    print('Copy', src, 'to', filename)
+    subprocess.call(['cp', src, filename])
+
+
+if __name__ == '__main__':
+    main()
