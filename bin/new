@@ -7,17 +7,26 @@ import subprocess
 import click
 
 
-@click.command()
-@click.option('--filename', '-f', default='main.cc')
-def main(filename):
+def new_file(filename, dest_path):
     path = os.getcwd()
     while not os.path.isfile(os.path.join(path, filename)) and path != '/':
         path = os.path.dirname(path)
     src = os.path.join(path, filename)
     if not os.path.isfile(src):
         sys.exit(1)
-    print('Copy', src, 'to', filename)
-    subprocess.call(['cp', src, filename])
+    print('Copy', src, 'to', dest_path)
+    subprocess.call(['cp', src, dest_path])
+
+
+@click.command()
+@click.option('--filename', '-f', default='main.cc')
+@click.argument('dirs', nargs=-1)
+def main(filename, dirs):
+    if len(dirs) == 0:
+        new_file(filename, filename)
+    for path in dirs:
+        os.makedirs(path, exist_ok=True)
+        new_file(filename, os.path.join(path, filename))
 
 
 if __name__ == '__main__':
